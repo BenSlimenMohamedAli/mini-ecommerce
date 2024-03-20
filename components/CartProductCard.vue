@@ -42,13 +42,10 @@
           <div class="flex justify-end mb-4" @click="openRemoveConfirmation()">
             <SvgTrash class="cursor-pointer hover:scale-125" />
           </div>
-          <h1 class="text-3xl line-clamp-2">
+          <h1 class="text-3xl">
             <span class="font-bold">{{ cartItem.quantity }}</span> x
             {{ cartItem?.product?.title }}
           </h1>
-          <p class="text-gray-500 line-clamp-6 lg:line-clamp-3 mt-4">
-            {{ cartItem?.product?.description }}
-          </p>
         </div>
         <div class="flex justify-between items-center pt-4">
           <div class="border rounded">

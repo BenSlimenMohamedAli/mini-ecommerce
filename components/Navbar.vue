@@ -1,26 +1,39 @@
 <template>
   <div
-    class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 text-center px-8 py-5 bg-white border-b z-20"
+    class="flex gap-4 justify-between text-center px-8 py-5 bg-white border-b z-20 shadow"
   >
     <div
-      v-for="category in store.categories"
-      :key="category"
-      class="p-4 border rounded cursor-pointer flex items-center justify-center uppercase"
-      @click="navigateTo('/products/' + category)"
+      class="p-4 border rounded cursor-pointer flex items-center justify-center"
+      @click="navigationStore.openSidebar()"
     >
-      {{ category }}
+      <SvgMenu />
     </div>
     <div
-      class="p-4 border rounded cursor-pointer flex items-center justify-center"
+      class="flex-1 uppercase text-black flex items-center justify-center text-[20px]"
+    >
+      {{ navigationStore.pageTitle }}
+    </div>
+    <div
+      class="p-4 border rounded cursor-pointer flex items-center justify-center relative"
       @click="navigateTo('/cart')"
     >
       <SvgCart />
+      <div
+        class="absolute -top-3 -left-3 bg-black text-white rounded-full text-[10px] w-6 h-6 flex items-center justify-center"
+      >
+        {{ cartStore.cart.length }}
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { useMainStore } from "../store";
+import { useNavigationStore } from "../store/navigation";
+import { useCartStore } from "../store/cart";
+import { computed } from "vue";
 
 const store = useMainStore();
+const navigationStore = useNavigationStore();
+const cartStore = useCartStore();
 </script>

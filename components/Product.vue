@@ -10,9 +10,14 @@
       />
 
       <div
-        class="items-center justify-center bg-black absolute top-0 right-0 left-0 bottom-0 z-10 hidden group-hover:flex bg-opacity-50 p-8 text-gray-200 text-[14px] uppercase"
+        class="items-center justify-center bg-black absolute top-0 right-0 left-0 bottom-0 z-10 hidden group-hover:flex flex-col bg-opacity-70 p-8 text-gray-200 text-[14px] uppercase"
       >
-        Discover More <SvgArrowRight :color="'#e4e7eb'" />
+        <p class="text-white line-clamp-6 mt-4">
+          {{ product?.description }}
+        </p>
+        <div class="flex mt-5 text-gray-200 cursor-pointer">
+          More Details <SvgArrowRight :color="'#e4e7eb'" />
+        </div>
       </div>
 
       <Rating :rating="product?.rating" class="absolute top-3 right-3" />
