@@ -50,7 +50,7 @@ Tailwind CSS was chosen for its utility-first approach, allowing for rapid proto
 
 ## Features
 
-- Product list page with the ability to add/remove items from the cart.
+- Product list page with the ability to add/remove and adjust quantity of the items.
 - Cart page with options to adjust item quantities and remove items.
 - Checkout page for finalizing purchases.
 - Sidebar navigation for easy access to different sections of the application.
@@ -145,3 +145,7 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## Links
+
+Github Pages : https://benslimenmohamedali.github.io/mini-ecommerce/

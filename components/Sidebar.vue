@@ -7,7 +7,7 @@
     ></div>
     <aside
       class="fixed top-0 bottom-0 left-0 w-[260px] bg-white z-30 transition-all duration-500 border-r"
-      :class="{ '-left-[260px]': !navigationStore.sidebarOpened }"
+      :class="{ 'left-[-260px]': !navigationStore.sidebarOpened }"
     >
       <h1
         class="font-bold text-center text-[20px] p-4 border-b shadow py-8 pt-9 uppercase"
