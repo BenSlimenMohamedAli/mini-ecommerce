@@ -7,7 +7,6 @@ export const useMainStore = defineStore("main", {
   state: () => ({
     categories: [] as string[],
     products: [] as Product[],
-    cart: [],
   }),
   actions: {
     async fetchCategories() {
@@ -21,9 +20,5 @@ export const useMainStore = defineStore("main", {
       this.products = result;
     },
   },
-  getters: {
-    getAllCategories() {
-      return null;
-    },
-  },
+  getters: {},
 });

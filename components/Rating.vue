@@ -1,19 +1,20 @@
 <template>
   <div class="flex items-center">
-    <SvgStar v-for="rating in toInt(ratingScore)" :key="rating" />
-    <SvgHalfStar v-if="!isInt(ratingScore)" />
-    <div class="text-[12px] ml-2">( 200 )</div>
+    <SvgStar v-for="r in toInt(rating?.rate)" :key="r" />
+    <SvgHalfStar v-if="!isInt(rating?.rate)" />
+    <div class="text-[12px] ml-2">( {{ rating?.count }} )</div>
   </div>
 </template>
 
 <script setup lang="ts">
-const ratingScore = 4.4;
+const props = defineProps(["rating"]);
 
 const isInt = (n) => {
   return n % 1 === 0;
 };
 
 const toInt = (n) => {
-  return parseInt(n);
+  if (n) return parseInt(n);
+  return 0;
 };
 </script>
